@@ -1,0 +1,150 @@
+{
+  "info": {
+    "_postman_id": "ca60f821-294c-4511-9467-ed7d45067d02",
+    "name": "FakeStoreAPI - Products",
+    "description": "Коллекция для тестирования эндпоинтов товаров (Products) в FakeStoreAPI",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+    "_exporter_id": "54511171",
+    "_collection_link": "https://go.postman.co/collection/54511171-ca60f821-294c-4511-9467-ed7d45067d02?source=collection_link"
+  },
+  "item": [
+    {
+      "name": "Get all products",
+      "request": {
+        "method": "GET",
+        "header": [],
+        "url": {
+          "raw": "{{baseUrl}}/products",
+          "host": [
+            "{{baseUrl}}"
+          ],
+          "path": [
+            "products"
+          ]
+        },
+        "description": "Получить список всех доступных товаров."
+      },
+      "response": []
+    },
+    {
+      "name": "Get a single product",
+      "request": {
+        "method": "GET",
+        "header": [],
+        "url": {
+          "raw": "{{baseUrl}}/products/:id",
+          "host": [
+            "{{baseUrl}}"
+          ],
+          "path": [
+            "products",
+            ":id"
+          ],
+          "variable": [
+            {
+              "key": "id",
+              "value": "1",
+              "description": "ID товара"
+            }
+          ]
+        },
+        "description": "Получить информацию о конкретном товаре по его ID."
+      },
+      "response": []
+    },
+    {
+      "name": "Add a new product",
+      "request": {
+        "method": "POST",
+        "header": [
+          {
+            "key": "Content-Type",
+            "value": "application/json"
+          }
+        ],
+        "body": {
+          "mode": "raw",
+          "raw": "{\n  \"title\": \"New Product\",\n  \"price\": 29.99,\n  \"description\": \"A great new product\",\n  \"category\": \"electronics\",\n  \"image\": \"https://example.com/image.jpg\"\n}"
+        },
+        "url": {
+          "raw": "{{baseUrl}}/products",
+          "host": [
+            "{{baseUrl}}"
+          ],
+          "path": [
+            "products"
+          ]
+        },
+        "description": "Создать новый товар."
+      },
+      "response": []
+    },
+    {
+      "name": "Update a product",
+      "request": {
+        "method": "PUT",
+        "header": [
+          {
+            "key": "Content-Type",
+            "value": "application/json"
+          }
+        ],
+        "body": {
+          "mode": "raw",
+          "raw": "{\n  \"title\": \"Updated Product\",\n  \"price\": 39.99,\n  \"description\": \"An updated product description\",\n  \"category\": \"electronics\",\n  \"image\": \"https://example.com/updated-image.jpg\"\n}"
+        },
+        "url": {
+          "raw": "{{baseUrl}}/products/:id",
+          "host": [
+            "{{baseUrl}}"
+          ],
+          "path": [
+            "products",
+            ":id"
+          ],
+          "variable": [
+            {
+              "key": "id",
+              "value": "1",
+              "description": "ID товара"
+            }
+          ]
+        },
+        "description": "Обновить существующий товар по его ID."
+      },
+      "response": []
+    },
+    {
+      "name": "Delete a product",
+      "request": {
+        "method": "DELETE",
+        "header": [],
+        "url": {
+          "raw": "{{baseUrl}}/products/:id",
+          "host": [
+            "{{baseUrl}}"
+          ],
+          "path": [
+            "products",
+            ":id"
+          ],
+          "variable": [
+            {
+              "key": "id",
+              "value": "1",
+              "description": "ID товара"
+            }
+          ]
+        },
+        "description": "Удалить конкретный товар по его ID."
+      },
+      "response": []
+    }
+  ],
+  "variable": [
+    {
+      "key": "baseUrl",
+      "value": "https://fakestoreapi.com"
+    }
+  ]
+}
